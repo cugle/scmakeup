@@ -1,0 +1,40 @@
+
+  <div id="header">
+  	<div id="headcontainer">
+	<div id="logo"><img src="{IMG_PATH}logo.jpg" /></div>
+    <div id="search"><form id="searchform" name="form1" method="post" action="">
+         <input name="keywords" type="text" />
+           <label>
+             <input type="submit" name="button" id="button" value="搜索" />
+           </label>
+         </form></div>
+    <div id="menu">
+    	 <div class="menudiv">
+         <ul id="menu"> 
+            <li id="menuitem"><a href="{siteurl($siteid)}">首页</a><span>|</span></li>
+            {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $r}
+           <li id="menuitem"><a href="articlelist.html" class="link"> <a href="{$r[url]}">{$r[catname]}</a><span>|</span></li> 
+            {/loop}
+            {/pc}
+       	 </ul> 
+	   	 </div>
+    </div>
+	</div>
+ 	 <!-- end #header -->
+  </div>
+  
+<div id="flashbanner">
+    <div id="slideshow" rel="auto-play">
+	<div class="img">
+		<span>
+			<a href="#" target="_blank"><img width="930" height="400" alt="" src="{IMG_PATH}/1.jpg" /></a>
+			<a href="#" target="_blank"><img width="930" height="400" alt="" src="{IMG_PATH}/2.jpg" /></a>
+			<a href="#" target="_blank"><img width="930" height="400" alt="" src="{IMG_PATH}/3.jpg" /></a>
+		</span>
+		<div class="paging pattern"></div>
+		<div class="paging subpattern"></div>
+	</div>
+</div>
+</div>  
+<script type="text/javascript" src="http://www.scmakeup.com/statics/js/jquery.slider.js"></script>

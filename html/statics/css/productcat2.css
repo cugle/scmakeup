@@ -1,0 +1,18 @@
+@charset "utf-8";
+#container #mainContent #product #productlist li {
+	float: left;
+	width: 50%;
+	text-align: center;
+	padding-top:15px;
+	padding-bottom:10px;
+}
+#container #mainContent #product {
+	float: left;
+	margin-bottom: 50px;
+	width: 100%;
+}
+#container #mainContent #product #productlist {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCCCCC;
+}

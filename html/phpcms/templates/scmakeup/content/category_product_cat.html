@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SC美妆连锁加盟</title>
+<link href="{CSS_PATH}css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery-1.7.2.min.js"></script>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+
+<link href="{CSS_PATH}productcat.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}productcat2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+  {template "content","header"}
+
+  <div id="mainContent">
+  <div id="location"><a href="{siteurl($siteid)}">首页</a><span> > {catpos($catid)}列表</div>
+  <div id="product">
+  {loop subcat($CAT['catid']) $v}
+  <div>
+    	<a href="{$v[url]}"><h2 align="center">{$v[catname]}</h2></a>
+        <ul id="productlist"> 
+                 
+
+                 
+                 
+            {pc:content action="lists" catid="$v['catid']" num="2" order="id DESC" page="$page"}
+				{php if(!$data) echo "<p align=center>该分类下暂无数据</p><p><br/></p>"; }
+				{loop $data $r}
+				<li><a href="{$r[url]}" class="link">
+                 	<img src="{thumb($r[thumb],236,288)}" />
+          <h3>{$r[title]}</h3>
+                    <p>{$r[title]}</p>
+                 </a></li> 
+				{/loop}
+
+
+				{/pc}      
+      </ul>  
+      </div>
+      <div class="clear"></div>     
+       {/loop}
+    </div>
+    <div class="wrapProductList">
+		  <h3 align="center">SC产品分类</h3>
+          
+          
+     
+        {pc:content action="category" catid="14" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $k $v}
+            <div class="productList">
+                 <h3>{$v[catname]}</h3>
+                
+                 <ul>
+                     {pc:content action="category" catid="$k" num="15" siteid="$siteid" order="listorder ASC"}
+                     {loop $data $r}  <li><a href="{$r[url]}">{$r[catname]}</a></li> {/loop}
+                     {/pc}
+                 </ul>
+              </div>
+    
+            {/loop}
+   		{/pc}
+ 
+
+
+
+
+          
+          
+          
+          
+
+    </div>
+    <div class="clear"></div>       
+	<!-- end #mainContent -->
+  </div>
+  {template "content","footer"}
+
+<!-- end #container -->
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}css.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+<div id="container">
+{template "content","header"}
+    
+  <div id="mainContent">
+  	<div id="news">
+   		<h2 align="center">新闻动态</h2>
+    	<div id="leftnews">
+          <p align="center"><embed allowfullscreen="true" allowscriptaccess="always" flashvars="from=ku6" height="224" src="http://player.ku6.com/refer/ZT6OBQSMpj1mb0Wn_6zj7Q../v.swf" type="application/x-shockwave-flash" width="270"></p>
+          <div id="latestnew">
+          <h4 align="center">【SC品牌简介】</h3>
+          <p class="gray">{pc:get sql="SELECT * FROM sc_page where catid=2"}
+            {loop $data $key $val}
+            {str_cut(strip_tags($val[content]),700,"")}......<a href="{$val['url']}" title="{$val['title']}" class="gray">查看全文&gt;&gt;&gt;</a>
+            {/loop}
+            {/pc}      		</p>
+           
+                 
+				
+          </ul>
+          </div>
+        </div>
+  <div id="rightnews">
+
+            {pc:content  action="position" catid="6" posid="2"  order="listorder DESC" thumb="1" num="4"}
+            <ul id="newslist">
+             {loop $data $r}    
+                <li><a href="{$r[url]}" class="link">
+                 	<img src="{thumb($r[thumb],312,181)}" title="{$r[title]}" width="312" height="181"/>
+                 	 <h5>{$CATEGORYS[$catid][catname]}</h5>
+                     <h3>{str_cut($r[title],40)}</h3>
+                    <p>{str_cut($r['description'],150)}</p>
+                 </a></li> 
+                 
+                {/loop}
+            </ul>
+            {/pc}
+  
+
+      </div>
+    </div>
+    <div id="product">
+    	<h2 align="center">SC最新产品</h2>
+        
+        
+            {pc:content  action="lists" catid="14" thumb="1" order="listorder DESC" num="10"}
+            <ul id="productlist">
+             {loop $data $r}    
+                <li><a href="{$r[url]}" class="link">
+                 	<img src="{thumb($r[thumb],312,181)}" title="{$r[title]}"/>
+                 	 <h5>{$CATEGORYS[$catid][catname]}</h5>
+                     <h3>{str_cut($r[title],20)}</h3>
+                    <p>{str_cut($r['description'],100)}</p>
+                 </a></li> 
+                 
+                {/loop}
+            </ul>
+            {/pc}
+            
+            
+
+    </div>
+  <div id="school">
+    	<h2 align="center">SC学堂</h2>
+        
+                    {pc:content  action="lists" catid="36" thumb="1" order="listorder DESC" num="3"}
+            <ul id="schooltlist">
+             {loop $data $r}    
+                <li><a href="{$r[url]}" class="link">
+                 	<img src="{thumb($r[thumb],300,175)}" title="{$r[title]}" width="300px" height="175px"/>
+                     <h3>{str_cut($r[title],40)}</h3>
+                    <p>{str_cut($r['description'],80)}</p>
+                 </a></li> 
+                 
+                {/loop}
+            </ul>
+            {/pc}
+    </div>
+    
+<div class="wrapProductList">
+		  <h2 align="center">SC产品分类</h2>
+        {pc:content action="category" catid="14" num="25" siteid="$siteid" order="listorder ASC"}
+            {loop $data $k $v}
+            <div class="productList">
+                 <h3>{$v[catname]}</h3>
+                
+                 <ul>
+                     {pc:content action="category" catid="$k" num="15" siteid="$siteid" order="listorder ASC"}
+                     {loop $data $r}  <li><a href="{$r[url]}">{$r[catname]}</a></li> {/loop}
+                     {/pc}
+                 </ul>
+              </div>
+    
+            {/loop}
+   		{/pc}
+ 
+    </div>
+    <div class="clear"></div>       
+	<!-- end #mainContent -->
+  </div>
+  {template "content","footer"}
+   <!-- end #container -->
+</div>
+
+<script type="text/javascript" src="{JS_PATH}jquery.slider.js"></script>
+</body>
+</html>

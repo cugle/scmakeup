@@ -1,0 +1,47 @@
+@charset "utf-8";
+#container #mainContent .pic_news {
+	float: left;
+	height: 280px;
+	width: 300px;
+	overflow: hidden;
+	margin-top: 30px;
+	padding-left:20px;
+	padding-right:10px;
+}
+#container #mainContent .recommended {
+	float: left;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#container #mainContent .recommended #recommendedlist li {
+	float: left;
+	text-align: left;
+	width: 49%;
+}
+#container #mainContent .recommended #recommendedlist .link img {
+	float: left;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#container #mainContent .ProductcatList {
+	float: left;
+	width: 670px;
+}
+#container #mainContent .ProductcatList .productList {
+	float: left;
+	width: 200px;
+	margin-left: 20px;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #CCCCCC;
+	padding-bottom: 20px;
+}
+#container #mainContent .pic_news #pic_news_box li {
+	text-align: center;
+}
+#container #mainContent .ProductcatList .productList li {
+	margin-left: 5px;
+	padding-left: 5px;
+}

@@ -1,0 +1,69 @@
+@charset "utf-8";
+#container #mainContent #news #leftnews {
+	float: left;
+	width: 282px;
+	background-color: #2a2b2e;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	color: #b5b6b6;
+	padding-left: 10px;
+	margin-left: 10px;
+	padding-top: 10px;
+}
+#container #mainContent #news #rightnews #newslist li {
+	float: left;
+	width: 314px;
+	margin-right: 15px;
+	margin-left: 5px;
+	padding-bottom:20px;
+}
+#container #mainContent #news #leftnews #latestnew p{
+	float: left;
+
+	margin-right: 15px;
+	margin-left: 5px;
+	line-height:25px;
+	font-size:12px;
+	
+
+}
+#container #mainContent #news {
+	float: left;
+}
+#container #mainContent #product {
+	float: left;
+	width: 100%;
+	margin-bottom: 50px;
+}
+#container #mainContent #school #schooltlist {
+	float: left;
+	width: 100%;
+}
+#container #mainContent #product #productlist li {
+	float: left;
+	width: 25%;
+	padding-left: 0px;
+	text-align: center;
+}
+#container #mainContent #product #productlist {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+}
+#container #mainContent #school #schooltlist li {
+	float: left;
+	width: 33%;
+}
+#container #mainContent #school {
+	width: 100%;
+	clear: both;
+	float: left;
+	margin-bottom: 50px;
+}
+#container #mainContent #school #schooltlist {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}

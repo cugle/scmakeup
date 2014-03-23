@@ -1,0 +1,20 @@
+@charset "utf-8";
+#container #mainContent #article #productlist li {
+	float: left;
+	width: 320px;
+	display: inline-block;
+}
+#container #mainContent #article #productlist {
+	margin-left: 15px;
+}
+#container #mainContent  #loadmore {
+	width: 150px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	color: #FFFFFF;
+	background-color: #000000;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
