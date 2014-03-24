@@ -77,3 +77,5 @@
 <?php exit;?>03-07 14:37:00 | 2 | mysql_fetch_row() expects parameter 1 to be resource, array given | api\picflow.php | 31
 <?php exit;?>03-07 14:37:38 | 2 | mysql_fetch_row() expects parameter 1 to be resource, array given | api\picflow.php | 32
 <?php exit;?>03-07 14:38:01 | 2 | mysql_fetch_row() expects parameter 1 to be resource, array given | api\picflow.php | 32
+<?php exit;?>03-24 14:40:41 | 2 | Missing argument 6 for push_api::position_update(), called in D:\WWW\www.scmakeup.com\html\caches\caches_model\caches_data\content_update.class.php on line 62 and defined | phpcms\modules\admin\classes\push_api.class.php | 33
+<?php exit;?>03-24 16:28:20 | 2 | date() expects parameter 2 to be long, string given | phpcms\modules\formguide\templates\formguide_edit.tpl.php | 31
